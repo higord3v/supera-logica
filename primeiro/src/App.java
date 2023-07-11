@@ -1,5 +1,7 @@
 import java.util.Scanner;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class App {
     public static void main(String[] args) throws Exception {
@@ -20,15 +22,21 @@ public class App {
 
         var result = new ArrayList<Integer>();
         
-        for (int i: impares) {
+        Collections.sort(pares);
+        impares.sort(Comparator.reverseOrder());
+        
+        for (int i: pares) {
             result.add(i);
         }
-        for (int i: pares) {
+
+        for (int i: impares) {
             result.add(i);
         }
 
         for (int i: result) {
             System.out.println(i);
         }
+
+        sc.close();
     }
 }
